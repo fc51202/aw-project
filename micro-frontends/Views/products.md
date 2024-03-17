@@ -7,23 +7,24 @@
   <tr>
     <td rowspan="7">Product</td>
     <td rowspan="2"><img src="../images/categorias.png" ></td>
-    <td>Product categorization</td>
+    <td>Category of the products</td>
   </tr>
+
   <tr>
     <td><img src="../images/detalhes_carne.png" ></td>
-    <td>Animal data presentation</td>
+    <td>Data about the animal</td>
   </tr>
   <tr>
     <td><img src="../images/info_carne.png" ></td>
-    <td>Detailed information display</td>
+    <td>Detailed information </td>
   </tr>
   <tr>
     <td><img src="../images/info_produto.png" ></td>
-    <td> Product information rendering</td>
+    <td> Information about the product</td>
   </tr>
   <tr>
     <td><img src="../images/produtos.png" ></td>
-    <td>Featured products presentation</td>
+    <td>Highlighted products</td>
   </tr>
 
   
