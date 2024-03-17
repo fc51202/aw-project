@@ -6,7 +6,7 @@
   </tr>
   <tr>
     <td rowspan="7">Product</td>
-    <td rowspan="2"><img src="../images/categorias.png" ></td>
+    <td><img src="../images/categorias.png" ></td>
     <td>Category of the products</td>
   </tr>
 
