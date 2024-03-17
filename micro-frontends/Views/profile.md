@@ -6,7 +6,7 @@
   </tr>
 
   <tr>
-    <td rowspan="7">Account Management</td>
+    <td rowspan="7">Account</td>
     <td  rowspan="4"><img src="../images/conta.png" ></td>
     <td >Display user account information</td>
   </tr>

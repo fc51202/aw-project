@@ -27,5 +27,10 @@
     <td>Featured products presentation</td>
   </tr>
 
+  <tr>
+    <td><img src="../images/qr.png" ></td>
+    <td>QR Code Reading</td>
+  </tr>
+
   
 </table>
