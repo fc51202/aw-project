@@ -5,7 +5,7 @@
     <th>ViewModels</th>
   </tr>
   <tr>
-    <td rowspan="5"><img src="../images/conta.png"></td>
+    <td rowspan="5"><img src="../images/conta.png" style=" width: 60%;"></td>
     <td>Header</td>
     <td>props.imgSrc</td>
   </tr>
