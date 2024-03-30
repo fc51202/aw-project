@@ -6,7 +6,7 @@
     </tr>
     <tr>
       <td rowspan="7">Login</td>
-      <td rowspan="7"><img src="/images/login.png" alt="login" style=" width: 60%;"></td>
+      <td rowspan="7"><img src="../images/login.png" alt="login" style=" width: 60%;"></td>
       <td>User Autentication</td>
     </tr>
     <tr>
