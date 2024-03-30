@@ -5,20 +5,23 @@
     <th>ViewModels</th>
   </tr>
   <tr>
-    <td rowspan="1"><img src="../images/detalhes_carne.png"></td>
+    <td rowspan="1"><img src="../images/detalhes_carne.png" style=" width: 60%;" ></td>
     <td>TableDetails</td>
     <td></td>
   </tr>
   <tr>
-    <td rowspan="2"><img src="../images/categorias.png"></td>
+    <td rowspan="2"><img src="../images/categorias.png" style=" width: 60%;"></td>
     <td>CategoriasDisplay</td>
+    <td></td>
   </tr>
   <tr>
     <td>Location</td>
+    <td></td>
   </tr>
    <tr>
-    <td rowspan="6"><img src="../images/favoritos.png"></td>
+    <td rowspan="6"><img src="../images/favoritos.png" style=" width: 60%;"></td>
     <td>SavedDisplay</td>
+    <td></td>
   </tr>
   <tr>
     <td rowspan="5">ProductInfo</td>
@@ -34,7 +37,7 @@
  
 
   <tr>
-     <td rowspan="9"><img src="../images/info_produto.png"></td>
+     <td rowspan="9"><img src="../images/info_produto.png" style=" width: 60%;"></td>
     <tr>
      <td>Header</td>
       <td>props.imgSrc</td></tr>
@@ -53,16 +56,20 @@
   </tr>
   <tr>
     <td>Expand</td>
+    <td></td>
   </tr>
   <tr>
     <td>Feedback</td>
+    <td></td>
   </tr>
   <tr>
-    <td rowspan="6"><img src="../images/produtos.png"></td>
+    <td rowspan="6"><img src="../images/produtos.png" style=" width: 60%;"></td>
     <td>Header</td>
+    <td></td>
   </tr>
   <tr>
     <td>HighlightsDisplay</td>
+    <td></td>
   </tr>
   <tr>
     <td rowspan="5">ProductInfo</td>
