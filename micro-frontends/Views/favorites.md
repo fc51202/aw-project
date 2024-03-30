@@ -6,7 +6,7 @@
     </tr>
     <tr>
       <td rowspan="14">Favorites</td>
-      <td rowspan="7"><img src="../images/favoritos.png" alt="favorites image" width="100" height="200"></td>
+      <td rowspan="7"><img src="../images/favoritos.png" alt="favorites image" style=" width: 60%;"></td>
       <td>Favorites List View</td>
     </tr>
     <tr>
@@ -28,7 +28,7 @@
       <td>Navigation to the Account Page</td>
     </tr>
     <tr>
-      <td rowspan="7"><img src="../images/qr.png" alt="qr image" width="100" height="200"></td>
+      <td rowspan="7"><img src="../images/qr.png" alt="qr image" style=" width: 60%;"></td>
       <td>QR Code Scanning</td>
     </tr>
     <tr>

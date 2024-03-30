@@ -6,7 +6,7 @@
   </tr>
   <tr>
     <td rowspan="9">News</td>
-    <td rowspan="5"><img src="../images/noticias.png" alt="noticias" width="100" height="200"></td>
+    <td rowspan="5"><img src="../images/noticias.png" alt="noticias" style=" width: 60%;"></td>
     <td>News Presentation</td>
   </tr>
   <tr>
@@ -21,7 +21,7 @@
   <tr>
     <td>Navigation to the Statitics</td>
   </tr>
-    <td rowspan="4"><img src="../images/noticias2.png" alt="noticias2" width="100" height="200"></td>
+    <td rowspan="4"><img src="../images/noticias2.png" alt="noticias2" style=" width: 60%;"></td>
     <td>Presentation of News Details</td>
   </tr>
   <tr>

@@ -7,7 +7,7 @@
 
   <tr>
     <td rowspan="7">Account</td>
-    <td  rowspan="4"><img src="../images/conta.png" ></td>
+    <td  rowspan="4"><img src="../images/conta.png" style=" width: 60%;" ></td>
     <td >Display user account information</td>
   </tr>
   <tr>
@@ -21,7 +21,7 @@
   </tr>
 
   <tr>
-    <td rowspan="3" ><img src="../images/login.png" ></td>
+    <td rowspan="3" ><img src="../images/login.png" style=" width: 60%;"></td>
     <td> Login form </td>
   </tr>
   <tr>
