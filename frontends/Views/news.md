@@ -21,14 +21,11 @@
   <tr>
     <td>Navigation to the Statitics</td>
   </tr>
-    <td rowspan="4"><img src="../images/noticias2.png" alt="noticias2" style=" width: 60%;"></td>
+    <td rowspan="3"><img src="../images/noticias2.png" alt="noticias2" style=" width: 60%;"></td>
     <td>Presentation of News Details</td>
   </tr>
   <tr>
     <td>Product Details</td>
-  </tr>
-  <tr>
-    <td>Navegação Relacionada</td>
   </tr>
   <tr>
     <td>Navigation to Previous Page</td>

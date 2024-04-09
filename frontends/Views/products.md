@@ -12,19 +12,19 @@
 
   <tr>
     <td><img src="../images/detalhes_carne.png" style=" width: 60%;" ></td>
-    <td>Animal data presentation</td>
+    <td>Animal data</td>
   </tr>
   <tr>
     <td><img src="../images/info_carne.png" style=" width: 60%;" ></td>
-    <td>Detailed information display </td>
+    <td>Detailed information</td>
   </tr>
   <tr>
     <td><img src="../images/info_produto.png" style=" width: 60%;"></td>
-    <td>Product information rendering</td>
+    <td>Product Details</td>
   </tr>
   <tr>
     <td><img src="../images/produtos.png" style=" width: 60%;"></td>
-    <td>Featured products presentation</td>
+    <td>Highlights</td>
   </tr>
 
   
