@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
 <style>
 table {
   font-family: arial, sans-serif;
@@ -19,8 +16,6 @@ tr:nth-child(even) {
 }
 </style>
 
-</head>
-<body>
 
 <h2>Navigation ViewModels</h2>
 <table>
@@ -47,5 +42,3 @@ tr:nth-child(even) {
  
 
 </table>
-</body>
-</html>
