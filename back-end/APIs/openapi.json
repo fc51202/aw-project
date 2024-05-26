@@ -1,0 +1,1042 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "QRmeat API",
+    "description": "aw-project, Grupo 17, Beatriz Patatas Nº56950, Gonçalo Rocha Nº51202",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/auth/{client_id}": {
+      "get": {
+        "summary": "Read only access to client authentication details.",
+        "tags": [
+          "ClientAuth"
+        ],
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Client authentication details retrieved."
+          }
+        }
+      },
+      "put": {
+        "summary": "Update authentication details for a specific client.",
+        "tags": [
+          "ClientAuth"
+        ],
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Authentication details updated."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove a specific client's authentication details.",
+        "tags": [
+          "ClientAuth"
+        ],
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Authentication details removed."
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "Create a new session token for client authentication.",
+        "tags": [
+          "ClientAuth"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Session token created."
+          }
+        }
+      }
+    },
+    "/clients": {
+      "get": {
+        "summary": "Retrieves information list of all clients.",
+        "tags": [
+          "ClientInfo"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of all clients retrieved."
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new client profile.",
+        "tags": [
+          "ClientInfo"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Client profile created."
+          }
+        }
+      }
+    },
+    "/clients/{client_id}": {
+      "get": {
+        "summary": "Read only access to specific client's details.",
+        "tags": [
+          "ClientInfo"
+        ],
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Client details retrieved."
+          }
+        }
+      },
+      "put": {
+        "summary": "Update information for a specific client.",
+        "tags": [
+          "ClientInfo"
+        ],
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Client information updated."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove a specific client's information.",
+        "tags": [
+          "ClientInfo"
+        ],
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Client information removed."
+          }
+        }
+      }
+    },
+    "/news": {
+      "get": {
+        "summary": "Retrieves a list of all news articles.",
+        "tags": [
+          "NewsService"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of news articles retrieved."
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new news article.",
+        "tags": [
+          "NewsService"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "content": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "News article created."
+          }
+        }
+      }
+    },
+    "/news/{news_id}": {
+      "get": {
+        "summary": "Read only access to a specific news article.",
+        "tags": [
+          "NewsService"
+        ],
+        "parameters": [
+          {
+            "name": "news_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "News article retrieved."
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a specific news article.",
+        "tags": [
+          "NewsService"
+        ],
+        "parameters": [
+          {
+            "name": "news_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "content": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "News article updated."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove a specific news article.",
+        "tags": [
+          "NewsService"
+        ],
+        "parameters": [
+          {
+            "name": "news_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "News article removed."
+          }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "summary": "Retrieves a list of all products.",
+        "tags": [
+          "ProductInfo"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of products retrieved."
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a new product to the catalog.",
+        "tags": [
+          "ProductInfo"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "price": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Product added."
+          }
+        }
+      }
+    },
+    "/products/{product_id}": {
+      "get": {
+        "summary": "Read only access to details for a specific product.",
+        "tags": [
+          "ProductInfo"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product details retrieved."
+          }
+        }
+      },
+      "put": {
+        "summary": "Update information for a specific product.",
+        "tags": [
+          "ProductInfo"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "price": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Product information updated."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove a specific product from the catalog.",
+        "tags": [
+          "ProductInfo"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Product removed."
+          }
+        }
+      }
+    },
+    "/prices/products": {
+      "get": {
+        "summary": "Retrieves prices for all products.",
+        "tags": [
+          "ProductPrice"
+        ],
+        "responses": {
+          "200": {
+            "description": "Product prices retrieved."
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a new price for a product.",
+        "tags": [
+          "ProductPrice"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "product_id": {
+                    "type": "integer"
+                  },
+                  "price": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Price added."
+          }
+        }
+      }
+    },
+    "/prices/products/{product_id}": {
+      "get": {
+        "summary": "Read only access to price for a specific product.",
+        "tags": [
+          "ProductPrice"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product price retrieved."
+          }
+        }
+      },
+      "put": {
+        "summary": "Update the price for a specific product.",
+        "tags": [
+          "ProductPrice"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "price": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Product price updated."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove the price of a specific product.",
+        "tags": [
+          "ProductPrice"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Product price removed."
+          }
+        }
+      }
+    },
+    "/reviews/products": {
+      "get": {
+        "summary": "Retrieves all reviews for all products.",
+        "tags": [
+          "ProductService"
+        ],
+        "responses": {
+          "200": {
+            "description": "All product reviews retrieved."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove all reviews.",
+        "tags": [
+          "ProductService"
+        ],
+        "responses": {
+          "204": {
+            "description": "All reviews removed."
+          }
+        }
+      }
+    },
+    "/reviews/products/{product_id}": {
+      "get": {
+        "summary": "Read only access to reviews for a specific product.",
+        "tags": [
+          "ProductService"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product reviews retrieved."
+          }
+        }
+      },
+      "put": {
+        "summary": "Update an existing review for a specific product.",
+        "tags": [
+          "ProductService"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "review": {
+                    "type": "string"
+                  },
+                  "rating": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Product review updated."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove a specific review.",
+        "tags": [
+          "ProductService"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Product review removed."
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a new review for a specific product.",
+        "tags": [
+          "ProductService"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "review": {
+                    "type": "string"
+                  },
+                  "rating": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Product review added."
+          }
+        }
+      }
+    },
+    "/details/products": {
+      "get": {
+        "summary": "Retrieves all details for all products.",
+        "tags": [
+          "ProductDetails"
+        ],
+        "responses": {
+          "200": {
+            "description": "All product details retrieved."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove all product details.",
+        "tags": [
+          "ProductDetails"
+        ],
+        "responses": {
+          "204": {
+            "description": "All product details removed."
+          }
+        }
+      }
+    },
+    "/details/products/{product_id}": {
+      "parameters": [
+        {
+          "name": "product_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Read only access to details for a specific product.",
+        "tags": [
+          "ProductDetails"
+        ],
+        "responses": {
+          "200": {
+            "description": "Product details retrieved."
+          }
+        }
+      },
+      "put": {
+        "summary": "Update details for a specific product.",
+        "tags": [
+          "ProductDetails"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "details": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Product details updated."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove specific product details.",
+        "tags": [
+          "ProductDetails"
+        ],
+        "responses": {
+          "204": {
+            "description": "Product details removed."
+          }
+        }
+      },
+      "post": {
+        "summary": "Add new details for a specific product.",
+        "tags": [
+          "ProductDetails"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "details": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Product details added."
+          }
+        }
+      }
+    },
+    "/statistics": {
+      "get": {
+        "summary": "Retrieves all statistics.",
+        "tags": [
+          "StatsService"
+        ],
+        "responses": {
+          "200": {
+            "description": "All statistics retrieved."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove all statistics.",
+        "tags": [
+          "StatsService"
+        ],
+        "responses": {
+          "204": {
+            "description": "All statistics removed."
+          }
+        }
+      }
+    },
+    "/statistics/{statistics_id}": {
+      "parameters": [
+        {
+          "name": "statistics_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "summary": "Read only access to specific statistics.",
+        "tags": [
+          "StatsService"
+        ],
+        "responses": {
+          "200": {
+            "description": "Statistics retrieved."
+          }
+        }
+      },
+      "put": {
+        "summary": "Update specific statistics.",
+        "tags": [
+          "StatsService"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Statistics updated."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove specific statistics.",
+        "tags": [
+          "StatsService"
+        ],
+        "responses": {
+          "204": {
+            "description": "Statistics removed."
+          }
+        }
+      },
+      "post": {
+        "summary": "Add new statistics for a specific category.",
+        "tags": [
+          "StatsService"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "category": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Statistics added."
+          }
+        }
+      }
+    },
+    "/scan/{product_id}": {
+      "get": {
+        "summary": "Decodes the QR code linked to a specific product.",
+        "tags": [
+          "QRCode"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "QR code decoded."
+          }
+        }
+      }
+    },
+    "/scan": {
+      "post": {
+        "summary": "Sends an image of a QR code to be scanned and processed.",
+        "tags": [
+          "QRCode"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "QR code processed."
+          }
+        }
+      }
+    }
+  }
+}
