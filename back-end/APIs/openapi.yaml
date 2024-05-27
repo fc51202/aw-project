@@ -6,7 +6,7 @@ info:
 paths:
   /auth/{client_id}:
     get:
-      summary: Read only access to client authentication details.
+      summary: Retrieve client authentication details
       tags:
         - ClientAuth
       parameters:
@@ -18,8 +18,12 @@ paths:
       responses:
         '200':
           description: Client authentication details retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientAuth'
     put:
-      summary: Update authentication details for a specific client.
+      summary: Update client authentication details
       tags:
         - ClientAuth
       parameters:
@@ -43,7 +47,7 @@ paths:
         '200':
           description: Authentication details updated.
     delete:
-      summary: Remove a specific client's authentication details.
+      summary: Remove client authentication details
       tags:
         - ClientAuth
       parameters:
@@ -57,7 +61,7 @@ paths:
           description: Authentication details removed.
   /auth/login:
     post:
-      summary: Create a new session token for client authentication.
+      summary: Create session token
       tags:
         - ClientAuth
       requestBody:
@@ -76,14 +80,20 @@ paths:
           description: Session token created.
   /clients:
     get:
-      summary: Retrieves information list of all clients.
+      summary: Retrieve list of all clients
       tags:
         - ClientInfo
       responses:
         '200':
           description: List of all clients retrieved.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ClientInfo'
     post:
-      summary: Create a new client profile.
+      summary: Create a new client profile
       tags:
         - ClientInfo
       requestBody:
@@ -102,7 +112,7 @@ paths:
           description: Client profile created.
   /clients/{client_id}:
     get:
-      summary: Read only access to specific client's details.
+      summary: Retrieve client details
       tags:
         - ClientInfo
       parameters:
@@ -114,8 +124,12 @@ paths:
       responses:
         '200':
           description: Client details retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientInfo'
     put:
-      summary: Update information for a specific client.
+      summary: Update client information
       tags:
         - ClientInfo
       parameters:
@@ -139,7 +153,7 @@ paths:
         '200':
           description: Client information updated.
     delete:
-      summary: Remove a specific client's information.
+      summary: Remove client information
       tags:
         - ClientInfo
       parameters:
@@ -153,14 +167,20 @@ paths:
           description: Client information removed.
   /news:
     get:
-      summary: Retrieves a list of all news articles.
+      summary: Retrieve list of news articles
       tags:
         - NewsService
       responses:
         '200':
           description: List of news articles retrieved.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/NewsService'
     post:
-      summary: Create a new news article.
+      summary: Create a news article
       tags:
         - NewsService
       requestBody:
@@ -179,7 +199,7 @@ paths:
           description: News article created.
   /news/{news_id}:
     get:
-      summary: Read only access to a specific news article.
+      summary: Retrieve news article details
       tags:
         - NewsService
       parameters:
@@ -191,8 +211,12 @@ paths:
       responses:
         '200':
           description: News article retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewsService'
     put:
-      summary: Update a specific news article.
+      summary: Update news article
       tags:
         - NewsService
       parameters:
@@ -216,7 +240,7 @@ paths:
         '200':
           description: News article updated.
     delete:
-      summary: Remove a specific news article.
+      summary: Remove news article
       tags:
         - NewsService
       parameters:
@@ -230,14 +254,20 @@ paths:
           description: News article removed.
   /products:
     get:
-      summary: Retrieves a list of all products.
+      summary: Retrieve list of products
       tags:
         - ProductInfo
       responses:
         '200':
           description: List of products retrieved.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductInfo'
     post:
-      summary: Add a new product to the catalog.
+      summary: Add a new product
       tags:
         - ProductInfo
       requestBody:
@@ -256,7 +286,7 @@ paths:
           description: Product added.
   /products/{product_id}:
     get:
-      summary: Read only access to details for a specific product.
+      summary: Retrieve product details
       tags:
         - ProductInfo
       parameters:
@@ -268,8 +298,12 @@ paths:
       responses:
         '200':
           description: Product details retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductInfo'
     put:
-      summary: Update information for a specific product.
+      summary: Update product information
       tags:
         - ProductInfo
       parameters:
@@ -293,7 +327,7 @@ paths:
         '200':
           description: Product information updated.
     delete:
-      summary: Remove a specific product from the catalog.
+      summary: Remove product
       tags:
         - ProductInfo
       parameters:
@@ -307,14 +341,20 @@ paths:
           description: Product removed.
   /prices/products:
     get:
-      summary: Retrieves prices for all products.
+      summary: Retrieve product prices
       tags:
         - ProductPrice
       responses:
         '200':
           description: Product prices retrieved.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductPrice'
     post:
-      summary: Add a new price for a product.
+      summary: Add a product price
       tags:
         - ProductPrice
       requestBody:
@@ -327,13 +367,13 @@ paths:
                 product_id:
                   type: integer
                 price:
-                  type: number
+                  type: integer
       responses:
         '201':
           description: Price added.
   /prices/products/{product_id}:
     get:
-      summary: Read only access to price for a specific product.
+      summary: Retrieve specific product price
       tags:
         - ProductPrice
       parameters:
@@ -345,8 +385,12 @@ paths:
       responses:
         '200':
           description: Product price retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductPrice'
     put:
-      summary: Update the price for a specific product.
+      summary: Update product price
       tags:
         - ProductPrice
       parameters:
@@ -363,12 +407,12 @@ paths:
               type: object
               properties:
                 price:
-                  type: number
+                  type: integer
       responses:
         '200':
           description: Product price updated.
     delete:
-      summary: Remove the price of a specific product.
+      summary: Remove product price
       tags:
         - ProductPrice
       parameters:
@@ -382,39 +426,64 @@ paths:
           description: Product price removed.
   /reviews/products:
     get:
-      summary: Retrieves all reviews for all products.
+      summary: Retrieve all product reviews
       tags:
         - ProductService
       responses:
         '200':
-          description: All product reviews retrieved.
-    delete:
-      summary: Remove all reviews.
+          description: List of product reviews retrieved.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductService'
+    post:
+      summary: Add a product review
       tags:
         - ProductService
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                client_id:
+                  type: integer
+                username:
+                  type: string
+                product_id:
+                  type: integer
+                evaluation:
+                  type: integer
       responses:
-        '204':
-          description: All reviews removed.
-  /reviews/products/{product_id}:
+        '201':
+          description: Review added.
+  /reviews/products/{feedback_id}:
     get:
-      summary: Read only access to reviews for a specific product.
+      summary: Retrieve specific product review
       tags:
         - ProductService
       parameters:
-        - name: product_id
+        - name: feedback_id
           in: path
           required: true
           schema:
             type: integer
       responses:
         '200':
-          description: Product reviews retrieved.
+          description: Product review retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductService'
     put:
-      summary: Update an existing review for a specific product.
+      summary: Update product review
       tags:
         - ProductService
       parameters:
-        - name: product_id
+        - name: feedback_id
           in: path
           required: true
           schema:
@@ -426,19 +495,17 @@ paths:
             schema:
               type: object
               properties:
-                review:
-                  type: string
-                rating:
-                  type: number
+                evaluation:
+                  type: integer
       responses:
         '200':
           description: Product review updated.
     delete:
-      summary: Remove a specific review.
+      summary: Remove product review
       tags:
         - ProductService
       parameters:
-        - name: product_id
+        - name: feedback_id
           in: path
           required: true
           schema:
@@ -446,10 +513,28 @@ paths:
       responses:
         '204':
           description: Product review removed.
-    post:
-      summary: Add a new review for a specific product.
+  /details/products/{product_id}:
+    get:
+      summary: Retrieve product details
       tags:
-        - ProductService
+        - ProductDetails
+      parameters:
+        - name: product_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Product details retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductDetails'
+    put:
+      summary: Update product details
+      tags:
+        - ProductDetails
       parameters:
         - name: product_id
           in: path
@@ -463,114 +548,59 @@ paths:
             schema:
               type: object
               properties:
-                review:
-                  type: string
-                rating:
+                average_gains:
                   type: number
-      responses:
-        '201':
-          description: Product review added.
-  /details/products:
-    get:
-      summary: Retrieves all details for all products.
-      tags:
-        - ProductDetails
-      responses:
-        '200':
-          description: All product details retrieved.
-    delete:
-      summary: Remove all product details.
-      tags:
-        - ProductDetails
-      responses:
-        '204':
-          description: All product details removed.
-  /details/products/{product_id}:
-    parameters:
-      - name: product_id
-        in: path
-        required: true
-        schema:
-          type: integer
-    get:
-      summary: Read only access to details for a specific product.
-      tags:
-        - ProductDetails
-      responses:
-        '200':
-          description: Product details retrieved.
-    put:
-      summary: Update details for a specific product.
-      tags:
-        - ProductDetails
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                details:
-                  type: string
+                  format: float
+                sale_price:
+                  type: number
+                  format: float
+                total_cost:
+                  type: number
+                  format: float
       responses:
         '200':
           description: Product details updated.
     delete:
-      summary: Remove specific product details.
+      summary: Remove product details
       tags:
         - ProductDetails
+      parameters:
+        - name: product_id
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
         '204':
           description: Product details removed.
-    post:
-      summary: Add new details for a specific product.
-      tags:
-        - ProductDetails
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                details:
-                  type: string
-      responses:
-        '201':
-          description: Product details added.
-  /statistics:
+  /statistics/{stats_id}:
     get:
-      summary: Retrieves all statistics.
+      summary: Read only access to specific statistics
       tags:
         - StatsService
-      responses:
-        '200':
-          description: All statistics retrieved.
-    delete:
-      summary: Remove all statistics.
-      tags:
-        - StatsService
-      responses:
-        '204':
-          description: All statistics removed.
-  /statistics/{statistics_id}:
-    parameters:
-      - name: statistics_id
-        in: path
-        required: true
-        schema:
-          type: integer
-    get:
-      summary: Read only access to specific statistics.
-      tags:
-        - StatsService
+      parameters:
+        - name: stats_id
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
         '200':
           description: Statistics retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatsService'
     put:
-      summary: Update specific statistics.
+      summary: Update a specific statistic
       tags:
         - StatsService
+      parameters:
+        - name: stats_id
+          in: path
+          required: true
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
@@ -578,36 +608,28 @@ paths:
             schema:
               type: object
               properties:
-                value:
+                num_value:
                   type: number
+                description:
+                  type: string
+                type:
+                  type: string
       responses:
         '200':
           description: Statistics updated.
     delete:
-      summary: Remove specific statistics.
+      summary: Remove a specific statistic
       tags:
         - StatsService
+      parameters:
+        - name: stats_id
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
         '204':
           description: Statistics removed.
-    post:
-      summary: Add new statistics for a specific category.
-      tags:
-        - StatsService
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                category:
-                  type: string
-                value:
-                  type: number
-      responses:
-        '201':
-          description: Statistics added.
   /scan/{product_id}:
     get:
       summary: Decodes the QR code linked to a specific product.
@@ -622,6 +644,10 @@ paths:
       responses:
         '200':
           description: QR code decoded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QRCode'
   /scan:
     post:
       summary: Sends an image of a QR code to be scanned and processed.
@@ -640,3 +666,127 @@ paths:
       responses:
         '200':
           description: QR code processed.
+components:
+  schemas:
+    ClientAuth:
+      type: object
+      properties:
+        client_id:
+          type: integer
+        username:
+          type: string
+        password:
+          type: string
+        email:
+          type: string
+    ClientInfo:
+      type: object
+      properties:
+        client_id:
+          type: integer
+        username:
+          type: string
+        password:
+          type: string
+        email:
+          type: string
+        status:
+          type: string
+        list_feedback:
+          type: array
+          items:
+            type: integer
+        my_products:
+          type: array
+          items:
+            type: integer
+    NewsService:
+      type: object
+      properties:
+        news_id:
+          type: integer
+        image:
+          type: string
+          format: url
+        title:
+          type: string
+        content:
+          type: string
+        date:
+          type: string
+          format: date
+        publisher:
+          type: string
+    ProductInfo:
+      type: object
+      properties:
+        product_id:
+          type: integer
+        display_image:
+          type: string
+        name:
+          type: string
+        store:
+          type: string
+        price:
+          type: number
+          format: float
+        producer:
+          type: string
+        food:
+          type: string
+        origin:
+          type: string
+    ProductPrice:
+      type: object
+      properties:
+        product_id:
+          type: integer
+        price:
+          type: integer
+    ProductService:
+      type: object
+      properties:
+        feedback_id:
+          type: integer
+        client_id:
+          type: integer
+        username:
+          type: string
+        product_id:
+          type: integer
+        evaluation:
+          type: integer
+    ProductDetails:
+      type: object
+      properties:
+        product_id:
+          type: integer
+        average_gains:
+          type: number
+          format: float
+        sale_price:
+          type: number
+          format: float
+        total_cost:
+          type: number
+          format: float
+    StatsService:
+      type: object
+      properties:
+        stats_id:
+          type: integer
+        num_value:
+          type: number
+          format: float
+        description:
+          type: string
+        type:
+          type: string
+    QRCode:
+      type: object
+      properties:
+        product_id:
+          type: integer
+        decoded_data:
+          type: string
