@@ -1,0 +1,2 @@
+- Find a way to integrate all components
+- Can be creative
